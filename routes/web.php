@@ -26,11 +26,10 @@ $router->group(['middleware' => 'auth','prefix' => 'api'], function ($router)
     $router->post('logout', 'AuthController@logout');
     $router->post('refresh', 'AuthController@refresh');
 
-    // classes
-    $router->get('class', 'ClassController@index');
+    // materies
+    $router->get('materies', 'MateriesController@index');
+    $router->get('materies/{materies}', 'MateriesController@select_id');
     $router->get('class/detail/{class}', 'ClassController@classdetail');
-    //subclass
-    $router->get('class/detail/subclass', 'ClassController@index_subclass');
 
 });
 
@@ -43,6 +42,29 @@ $router->group(['prefix' => 'api'], function () use ($router)
     // Categories
    $router->get('categories', 'CategoriesController@index');
    $router->get('categories/{categories}','CategoriesController@select_id');
+   // classes
+   $router->get('class', 'ClassController@index');
+   $router->get('class/subclass', 'ClassController@index_subclass');
+   $router->get('class/subclass/{subclass}', 'ClassController@select_subclass');
+   $router->get('class/hilights', 'ClassController@index_hilights');
+   $router->get('class/hilights/{hilights}', 'ClassController@select_hilights');
+
+   // Trendings
+   $router->get('trendings/populers', 'TrendingsController@index_populers');
+   $router->get('trendings/populers/{populers}', 'TrendingsController@select_populers');
+   $router->get('trendings/newclass', 'TrendingsController@index_newclass');
+   $router->get('trendings/newclass/{newclass}', 'TrendingsController@select_newclass');
+   $router->get('trendings/careers', 'TrendingsController@index_careers');
+   $router->get('trendings/careers/{careers}', 'TrendingsController@select_careers');
+   $router->get('trendings/testimonies', 'TrendingsController@index_testimonies');
+   $router->get('trendings/testimonies/{testimonies}', 'TrendingsController@select_testimonies');
+
+   //promotions
+   $router->get('promotions/discounts', 'PromotionsController@index_discounts');
+   $router->get('promotions/discounts/{discounts}', 'PromotionsController@select_discounts');
+   $router->get('promotions/kupons', 'PromotionsController@index_kupons');
+   $router->get('promotions/kupons/{kupons}', 'PromotionsController@select_kupons');
+
 });
 
 

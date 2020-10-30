@@ -16,4 +16,9 @@ class Classes extends Model
     {
         return $this->hasMany('App\Models\SubClass','idclass','idclass');
     }
+
+    public function hilights()
+    {
+        return $this->hasMany('App\Models\Hilights','idclass','idclass');
+    }
 }
