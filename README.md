@@ -1,0 +1,6 @@
+login di postman menggunakan user di laravel 
+menggunakan header Authorization
+tambakan token yg di dapat di login menggunakan Bearer menggunakan method get localhost:8000/api/me
+contoh : 
+Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9sb2dpbiIsImlhdCI6MTYwMzg3MzcxMiwiZXhwIjoxNjAzODc3MzEyLCJuYmYiOjE2MDM4NzM3MTIsImp0aSI6IkhGc3V2cGRYS29UUE1lWmoiLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.kpYqW94CHL0IGxwrodHIkd0_cbL9Q_Bb-2A4mJsLWYs
+php artisan jwt:secreet
