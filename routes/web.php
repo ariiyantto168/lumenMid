@@ -29,7 +29,6 @@ $router->group(['middleware' => 'auth','prefix' => 'api'], function ($router)
     // materies
     $router->get('materies', 'MateriesController@index');
     $router->get('materies/{materies}', 'MateriesController@select_id');
-    $router->get('class/detail/{class}', 'ClassController@classdetail');
 
 });
 
@@ -44,6 +43,8 @@ $router->group(['prefix' => 'api'], function () use ($router)
    $router->get('categories/{categories}','CategoriesController@select_id');
    // classes
    $router->get('class', 'ClassController@index');
+   $router->get('class/detail/{class}', 'ClassController@classdetail');
+   $router->get('class/id/{classes}', 'ClassController@select_class');
    $router->get('class/subclass', 'ClassController@index_subclass');
    $router->get('class/subclass/{subclass}', 'ClassController@select_subclass');
    $router->get('class/hilights', 'ClassController@index_hilights');

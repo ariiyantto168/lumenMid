@@ -40,6 +40,12 @@ class ClassController extends Controller
 
     }
 
+    public function select_class($classes)
+    {   
+        $cls = Classes::where('idclass',$classes)->get();
+        return response($cls);
+    }
+
     public function index_subclass()
     {
         $subclas = Subclass::all();
