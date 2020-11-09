@@ -20,13 +20,15 @@ class AuthController extends Controller
             'name' => 'required|max:15',
             'role' => 'required',
             'email' => 'required|unique:users|max:255',
-            'password' => 'required|min:6'
+            'password' => 'required|min:6',
+            'image' => 'required',
         ]);
             
         $name = $request->input("name");
         $role = $request->input("role");
         $email = $request->input("email");
         $password = $request->input("password");
+        $image = $request->input("image");
  
         $hashPwd = Hash::make($password);
  
@@ -34,7 +36,8 @@ class AuthController extends Controller
             "name" => $name,
             "role" => $role,
             "email" => $email,
-            "password" => $hashPwd
+            "password" => $hashPwd,
+            "image" => $image
         ];
  
  
