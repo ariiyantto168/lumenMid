@@ -30,6 +30,11 @@ $router->group(['middleware' => 'auth','prefix' => 'api'], function ($router)
     $router->get('materies', 'MateriesController@index');
     $router->get('materies/{materies}', 'MateriesController@select_id');
 
+       // user profiles
+   $router->get('users/profiles', 'UsersController@index_profile');
+   $router->get('users/profiles/{usr}', 'UsersController@select_profiles');
+   $router->post('users/profiles','UsersController@create_save');
+
 });
 
 // un-authentication
@@ -65,6 +70,7 @@ $router->group(['prefix' => 'api'], function () use ($router)
    $router->get('promotions/discounts/{discounts}', 'PromotionsController@select_discounts');
    $router->get('promotions/kupons', 'PromotionsController@index_kupons');
    $router->get('promotions/kupons/{kupons}', 'PromotionsController@select_kupons');
+
 
 });
 

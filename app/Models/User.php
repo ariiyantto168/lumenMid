@@ -53,4 +53,9 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     {
         return [];
     }
+
+    public function userprofiles()
+    {
+        return $this->belongsTo('App\Models\Userprofiles', 'iduserprofiles');
+    }
 }
