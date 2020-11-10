@@ -21,4 +21,9 @@ class Classes extends Model
     {
         return $this->hasMany('App\Models\Hilights','idclass','idclass');
     }
+
+    public function whislists()
+    {
+        return $this->hasMany('App\Models\Whislists','idclass');
+    }
 }

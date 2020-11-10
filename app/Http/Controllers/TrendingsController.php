@@ -17,49 +17,81 @@ class TrendingsController extends Controller
     public function index_populers()
     {
         $pop = Populers::all();
-        return response($pop);       
+        return response()->json([
+            'Class Populers' => $pop,
+            'code' => 200,
+            'message' => 'Succesfull'
+        ]);   
     }
 
     public function select_populers($populers)
     {   
         $pop = Populers::where('idpopulers',$populers)->get();
-        return response($pop);
+        return response()->json([
+            'Class Populers' => $pop,
+            'code' => 200,
+            'message' => 'Succesfull'
+        ]); 
     }
 
     public function index_newclass()
     {
         $ncls = Newclass::all();
-        return response($ncls);       
+        return response()->json([
+            'New Class' => $ncls,
+            'code' => 200,
+            'message' => 'Succesfull'
+        ]);       
     }
 
     public function select_newclass($newclass)
     {   
         $ncls = Newclass::where('idnewclass',$newclass)->get();
-        return response($ncls);
+        return response()->json([
+            'New Class' => $ncls,
+            'code' => 200,
+            'message' => 'Succesfull'
+        ]);
     }
 
     public function index_careers()
     {
         $car = Careers::all();
-        return response($car);       
+        return response()->json([
+            'Career Ready Program' => $car,
+            'code' => 200,
+            'message' => 'Succesfull'
+        ]);     
     }
 
     public function select_careers($careers)
     {   
         $car = Careers::where('idcareers',$careers)->get();
-        return response($car);
+        return response()->json([
+            'Career Ready Program' => $car,
+            'code' => 200,
+            'message' => 'Succesfull'
+        ]);
     }
 
     public function index_testimonies()
     {
-        $testimonies = Testimonies::all();
-        return response($testimonies);       
+        $test = Testimonies::all();
+        return response()->json([
+            'Testimoni User' => $test,
+            'code' => 200,
+            'message' => 'Succesfull'
+        ]);       
     }
 
     public function select_testimonies($testimonies)
     {
-        $testimonies = Testimonies::where('idtestimonies', $testimonies)->get();
-        return response($testimonies);
+        $test = Testimonies::where('idtestimonies', $testimonies)->get();
+        return response()->json([
+            'Testimoni User' => $test,
+            'code' => 200,
+            'message' => 'Succesfull'
+        ]);
     }
    
 }

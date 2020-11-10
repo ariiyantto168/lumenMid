@@ -55,6 +55,11 @@ $router->group(['prefix' => 'api'], function () use ($router)
    $router->get('class/hilights', 'ClassController@index_hilights');
    $router->get('class/hilights/{hilights}', 'ClassController@select_hilights');
 
+   // whislists
+   $router->get('whislists', 'WhislistsController@index');
+   $router->get('whislists/{whislists}', 'WhislistsController@select_whislists');
+   $router->post('whislists/create-new','WhislistsController@create_save');
+
    // Trendings
    $router->get('trendings/populers', 'TrendingsController@index_populers');
    $router->get('trendings/populers/{populers}', 'TrendingsController@select_populers');

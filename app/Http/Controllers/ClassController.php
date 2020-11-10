@@ -43,30 +43,50 @@ class ClassController extends Controller
     public function select_class($classes)
     {   
         $cls = Classes::where('idclass',$classes)->get();
-        return response($cls);
+        return response()->json([
+            'Class' => $cls,
+            'code' => 200,
+            'message' => 'Succesfull'
+        ]);
     }
 
     public function index_subclass()
     {
         $subclas = Subclass::all();
-        return response($subclas);
+        return response()->json([
+            'subclass' => $subclas,
+            'code' => 200,
+            'message' => 'Succesfull'
+        ]);
     }
 
     public function select_subclass($subclass)
     {   
         $sub = Subclass::where('idsubclass',$subclass)->get();
-        return response($sub);
+        return response()->json([
+            'subclass' => $sub,
+            'code' => 200,
+            'message' => 'Succesfull'
+        ]);
     }
 
     public function index_hilights()
     {
         $hil = Hilights::all();
-        return response($hil);
+        return response()->json([
+            'hilights' => $hil,
+            'code' => 200,
+            'message' => 'Succesfull'
+        ]);
     }
 
     public function select_hilights($hilights)
     {   
         $hil = Hilights::where('idhilights',$hilights)->get();
-        return response($hil);
+        return response()->json([
+            'hilights' => $hil,
+            'code' => 200,
+            'message' => 'Succesfull'
+        ]);
     }
 }

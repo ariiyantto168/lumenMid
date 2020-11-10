@@ -17,13 +17,21 @@ class MateriesController extends Controller
     public function index()
     {
         $materi = Materies::all();
-        return response($materi);
+        return response()->json([
+            'materies' => $materi,
+            'code' => 200,
+            'message' => 'Succesfull'
+        ]);
     }
 
     public function select_id($materies)
     {   
         $mat = Materies::where('idmateries',$materies)->get();
-        return response($mat);
+        return response()->json([
+            'Materies' => $mat,
+            'code' => 200,
+            'message' => 'Succesfull'
+        ]);
     }
     
     
