@@ -59,6 +59,7 @@ $router->group(['prefix' => 'api'], function () use ($router)
    $router->get('whislists', 'WhislistsController@index');
    $router->get('whislists/{whislists}', 'WhislistsController@select_whislists');
    $router->post('whislists/create-new','WhislistsController@create_save');
+   $router->get('whislists/mywhislists','WhislistsController@mywhislists');
 
    // Trendings
    $router->get('trendings/populers', 'TrendingsController@index_populers');

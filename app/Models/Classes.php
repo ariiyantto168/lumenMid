@@ -26,4 +26,9 @@ class Classes extends Model
     {
         return $this->hasMany('App\Models\Whislists','idclass');
     }
+
+    public function users()
+    {
+      return $this->belongsTo('App\Models\User', 'idusers');
+    }
 }

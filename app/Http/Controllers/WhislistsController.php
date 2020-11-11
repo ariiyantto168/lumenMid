@@ -19,7 +19,7 @@ class WhislistsController extends Controller
         return response()->json([
                 'whislists' => $whis,
                 'code' => 200,
-                'message' => 'ok'
+                'message' => 'Succesfully list whislists'
             ]);
     }
 
@@ -29,7 +29,7 @@ class WhislistsController extends Controller
         return response()->json([
             'whislists' => $whis,
             'code' => 200,
-            'message' => 'Succesfully'
+            'message' => 'Succesfully Select ID whislists'
         ]);
     }
 
@@ -44,6 +44,21 @@ class WhislistsController extends Controller
             'code' => 200,
             'message' => 'Succesfully Add Whislists Class'
         ]);
+    }
+
+    public function mywhislists()
+    {
+        $showWhislists = Whislists::with([
+            'classes' => function($user){
+                         $user->with('users');
+                        }
+                        ])->get();
+        return response()->json([
+            'whislists' => $showWhislists,
+            'code' => 200,
+            'message' => 'Succesfully Select ID whislists'
+        ]);
+        
     }
    
 }

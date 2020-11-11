@@ -21,5 +21,10 @@ class Whislists extends Model
       return $this->belongsTo('App\Models\User', 'idusers');
     }   
 
+    public function classes()
+    {
+        return $this->hasMany('App\Models\Classes','idclass');
+    }
+
 
 }
