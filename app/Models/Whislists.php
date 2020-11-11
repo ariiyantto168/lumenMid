@@ -13,17 +13,13 @@ class Whislists extends Model
     protected $primaryKey = 'idwhislists';
 
     protected $fillable = [
-        'idclass'
+        'idclass','idusers'
     ];
 
-    // public function class_belong()
-    // {
-    //     return $this->belongsTo('App\Models\Classes','idclass');
-    // }
+    public function users()
+    {
+      return $this->belongsTo('App\Models\User', 'idusers');
+    }   
 
-    // public function users()
-    // {
-    //     return $this->belongsTo('App\Models\User', 'idusers');
-    // }
 
 }

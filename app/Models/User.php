@@ -58,4 +58,9 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     {
         return $this->belongsTo('App\Models\Userprofiles', 'iduserprofiles');
     }
+
+    public function whislists()
+    {
+      return $this->hasMany('App\Models\Whislists', 'idusers');
+    }
 }
