@@ -35,6 +35,14 @@ $router->group(['middleware' => 'auth','prefix' => 'api'], function ($router)
    $router->get('users/profiles/{usr}', 'UsersController@select_profiles');
    $router->post('users/profiles','UsersController@create_save');
 
+      // whislists
+      $router->get('whislists', 'WhislistsController@index');
+      $router->get('whislists/{whislists}', 'WhislistsController@select_whislists');
+      $router->post('whislists/create-new','WhislistsController@create_save');
+      $router->get('whislists/mywhislists','WhislistsController@mywhislists');
+      $router->get('whislists/whislistsme','WhislistsController@whislistsme');
+      $router->delete('whislists/{whislists}','WhislistsController@delete');
+
 });
 
 // un-authentication
@@ -54,12 +62,6 @@ $router->group(['prefix' => 'api'], function () use ($router)
    $router->get('class/subclass/{subclass}', 'ClassController@select_subclass');
    $router->get('class/hilights', 'ClassController@index_hilights');
    $router->get('class/hilights/{hilights}', 'ClassController@select_hilights');
-
-   // whislists
-   $router->get('whislists', 'WhislistsController@index');
-   $router->get('whislists/{whislists}', 'WhislistsController@select_whislists');
-   $router->post('whislists/create-new','WhislistsController@create_save');
-   $router->get('whislists/mywhislists','WhislistsController@mywhislists');
 
    // Trendings
    $router->get('trendings/populers', 'TrendingsController@index_populers');
